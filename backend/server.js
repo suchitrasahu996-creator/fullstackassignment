@@ -6,6 +6,7 @@ import express from 'express';
 import cors from 'cors';
 
 import authRouter from './src/routes/authRoutes.js';
+import accountRoutes from './src/routes/accountRoutes.js';
 
 console.log("URL:", process.env.SUPABASE_URL);
 let app = express();
@@ -16,7 +17,7 @@ app.options("*", cors());
 app.use(express.json());
 
 app.use("/api/auth",authRouter);
-
+app.use("/api/account", accountRoutes);
 
 app.listen(4000,()=>{
     console.log("App is listening on port 4000");

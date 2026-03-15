@@ -1,6 +1,8 @@
 import express from "express";
-import authController from "../controllers/authController";
-import { authMiddleWare } from "../middlewares/authMiddleware";
+import { authMiddleWare } from "../middlewares/authMiddleware.js";
+import accountController from "../controllers/accountController.js";
 
-const router =express.Router();
+const accountRoutes =express.Router();
+accountRoutes.get("/balance", authMiddleWare, accountController.getBalance);
 
+export default accountRoutes

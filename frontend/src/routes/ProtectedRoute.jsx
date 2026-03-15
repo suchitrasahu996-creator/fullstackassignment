@@ -5,11 +5,7 @@ import {Loader2} from "lucide-react";
 
 
 const ProtectedRoute = ({ children }) => {
-  const { loading, user } = useAuth();
-
-  if (loading) return <div>
-    <Loader2 className="h-8 w-8 animate-spin text-primary" />
-  </div>;
+  const { user } = useAuth();
 
   return user
     ? children

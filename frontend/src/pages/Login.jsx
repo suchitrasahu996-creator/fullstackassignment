@@ -54,7 +54,6 @@ export default function Login() {
         <p className="text-xs text-slate-700 mt-5px mb-6 justify-center">Please enter your details the login </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Email */}
           <div>
             <label className="block text-gray-600 mb-1">Email</label>
             <input
@@ -68,7 +67,6 @@ export default function Login() {
             />
           </div>
 
-          {/* Password */}
           <div>
             <label className="block text-gray-600 mb-1">Password</label>
             <input
@@ -85,12 +83,12 @@ export default function Login() {
          
 
           {/* Button */}
-          <button
+          <Button
             type="submit"
             className="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition duration-300"
           >
             Login
-          </button>
+          </Button>
         </form>
 
         <p className="text-sm text-center text-gray-600 mt-4">

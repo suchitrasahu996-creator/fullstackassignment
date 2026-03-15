@@ -22,7 +22,7 @@ export default function Signup() {
     e.preventDefault();
     setError("");
 
-    const response = await axios.post("http://localhost:4000/api/signup", {
+    const response = await axios.post("http://localhost:4000/api/auth/signup", {
       name: formData.name,
       email: formData.email,
       password: formData.password,
