@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import { v4 as uuidv4 } from "uuid";
 import { supabase } from "../config/supabaseClient.js";
+import generateToken from "../utils/generateToken.js";
 
 const authController = {
   userLogin: async (req, res) => {
@@ -35,9 +36,12 @@ const authController = {
         });
       }
 
+      const token = generateToken(user);
+
       return res.status(200).json({
         success: true,
         data: user,
+        token:token
       });
     
   },
